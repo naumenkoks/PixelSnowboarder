@@ -1,55 +1,48 @@
-🎮 PixelSnowboarder
-Built in Unity (C#) — designed, coded, and animated solo as part of my game dev learning path.
+🏂 PixelSnowboarder
+Built in Unity (C#) — designed, coded, and animated solo as part of my game dev learning journey.
 
-✅ Project Overview
-PixelSnowboarder is a chill yet engaging 2D snowboarding game focused on player flow, flipping tricks, and not crashing before reaching the finish line. It combines fun physics, satisfying controls, smooth visuals, and meaningful particle + sound feedback for immersive moment-to-moment gameplay.
+🧊 Project Overview
+PixelSnowboarder is a chill but engaging 2D snowboarding game focused on smooth motion, mid-air flips, and avoiding crashes before reaching the finish line.
+Built to explore Unity’s physics, particle systems, and clean modular scripting, it offers satisfying player control and smart gameplay feedback using visual, audio, and camera tools.
 
-🧩 Key Gameplay Mechanics
-Player smoothly rides along a snowy terrain using Sprite Shape + Surface Effector 2D
-![image](https://github.com/user-attachments/assets/a44d8194-b59a-4ed4-ab5d-fbf3484f8c96)
+🕹️ Gameplay Features
+❄️ Smooth downhill movement using Sprite Shape + Surface Effector 2D
 
-Can rotate forward/backward mid-air and boost speed with Arrow keys
+🔄 Mid-air flips and torque-based rotation (Left/Right Arrow keys)
 
-Crashing (head hits) and reaching the finish line trigger particles + sound, then restart level with delay
+🚀 Boost system (Up Arrow) increases speed dynamically
 
-Dust Trail particle system activates only when board is grounded, and scales dynamically based on boost
+💥 Crash detection using colliders triggers particles + sound, then restarts the level
 
-Cinemachine virtual camera follows player with smooth damping and smart framing
+🎉 Finish line triggers win effects (particles, SFX, level reload)
+
+🌬️ Dust trail system only activates on ground contact, dynamically resizes while boosting
+
+🎥 Cinemachine camera for smooth-follow and screen composition
 
 🧠 Code & System Design Highlights
- Modular scripting: PlayerController, CrashDetector, FinishLine, DustTrail all separated by concern
+🧩 Modular scripts: PlayerController, CrashDetector, FinishLine, DustTrail
 
-💡 Neat use of:
+🧠 Inter-script communication via FindAnyObjectByType<>()
 
-FindAnyObjectByType<> for inter-script communication
+🏷️ Tag-based collision logic
 
-Tag-based collision detection for clean logic
+🌟 Particle sizing via MainModule.startSize control
 
-ParticleSystem MainModule access for dynamic sizing
+🌀 Smooth physics behavior using Rigidbody2D, Torque, and SurfaceEffector2D
 
-🎮 Player controls feel tight and responsive with physics-based torque & force
+⏱️ Delayed restart logic using SceneManager.LoadScene() with Invoke()
 
- Technical Components
-System                    Implementation
-Physics                   Rigidbody2D, CapsuleCollider2D, CircleColliders
-Camera	                  Cinemachine with Framing Transposer & Damping
-Terrain	                  Sprite Shape Controller for organic slope design
-Movement	                SurfaceEffector2D for player movement based on slope angle
-Particles	                Triggered effects for crashing, movement, and win state
-Sound	                    AudioSource plays crash SFX and finish SFX
-Restart                   Logic	SceneManager reloads level with delay using Invoke()
-
-🔧 Main Scripts Used
-PlayerController.cs – Controls movement, boosting, torque
-
-CrashDetector.cs – Triggers crash effects & restarts level
-
-FinishLine.cs – Detects finish, plays win effects & reloads
-
-DustTrail.cs – Starts/stops ground trail + dynamic particle size control
-
-                                                                                                    💬 Developer's Note:
-One of the funnies challenges was implementing dynamic particle trails that only activate when touching the ground, and increase in size when boosting. It helped me deeply understand Unity’s physics, collision detection, and real-time particle control.
+🔊 Audio feedback for crash/win events using AudioSource.PlayOneShot()
+🔧 Main Scripts Overview
+Script	                              Role
+PlayerController.cs	                 Movement, torque rotation, boost control
+CrashDetector.cs	                    Detects collisions, triggers crash FX, restarts level
+FinishLine.cs	                       Detects win state, plays finish FX, reloads level
+DustTrail.cs	                        Activates/deactivates trail, controls size on boost
+                                                                                                  
+                                                                                                                ✨ Developer Insight
+“One of the most satisfying challenges was setting up dynamic particle trails that only activate when grounded and increase in size while boosting. It deepened my understanding of Unity physics, particle systems, and real-time interaction between scripts.”
 
 
 🖼️ Gameplay Preview
