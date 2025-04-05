@@ -41,8 +41,8 @@ CrashDetector.cs	                    Detects collisions, triggers crash FX, rest
 FinishLine.cs	                       Detects win state, plays finish FX, reloads level
 DustTrail.cs	                        Activates/deactivates trail, controls size on boost
                                                                                                   
-                                                                                                                ✨ Developer Insight
-“One of the most satisfying challenges was setting up dynamic particle trails that only activate when grounded and increase in size while boosting. It deepened my understanding of Unity physics, particle systems, and real-time interaction between scripts.”
+✨ Developer Insight
+One of the most satisfying challenges for me was setting up dynamic particle trails that only activate when grounded and increase in size while boosting. It deepened my understanding of Unity physics, particle systems, and real-time interaction between scripts. But surely there is many more things I'm proud of! :D
 
 
 🖼️ Gameplay Preview
